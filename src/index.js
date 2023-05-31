@@ -1,5 +1,7 @@
 require("dotenv").config();
-const { Client, IntentsBitField } = require("discord.js");
+const { Client, IntentsBitField, ActivityType } = require("discord.js");
+const eventHandler = require("./handlers/eventHandler");
+
 const client = new Client({
     intents: [
         IntentsBitField.Flags.Guilds,
@@ -8,19 +10,12 @@ const client = new Client({
         IntentsBitField.Flags.MessageContent,
     ],
 });
-
 client.on("ready", (c) => {
-    console.log(`✅ ${c.user.tag} is online.`);
+    client.user.setActivity({
+        name: "Jojo's Bizzare Adventure",
+        type: ActivityType.Watching,
+    });
 });
-
-client.on("messageCreate", (msg) => {
-    if (msg.author.bot) {
-        return;
-    }
-
-    if (msg.content === "star platinum") {
-        msg.reply("za warudo!");
-    }
-});
+eventHandler(client);
 
 client.login(process.env.TOKEN);
