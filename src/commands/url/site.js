@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("discord.js");
+const { EmbedBuilder, Embed } = require("discord.js");
 const site = new EmbedBuilder()
     .setTitle("Наш сайт")
     .setURL("https://aksaysquad.infinityfreeapp.com/")
