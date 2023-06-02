@@ -10,5 +10,9 @@ Some basic slash commands are:
 /site
 ```
 
+## EN
+Jotaro Kujo - bot named after an Anime character, for local use. Code posted for review. Needs a special environment for run.
+
+## RU
 Джотаро Куджо - это бот названный в честь персонажа Аниме, для локального использования.
 Код выставлен ради ознокомления. Для запуска нужна специальная среда.
