@@ -31,5 +31,3 @@ client.on("ready", (c) => {
         console.log(`Error: ${error}`);
     }
 })();
-
-client.login(process.env.TOKEN);
