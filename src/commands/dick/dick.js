@@ -19,6 +19,7 @@ module.exports = {
             });
             return;
         }
+
         try {
             await interaction.deferReply();
 
@@ -34,21 +35,24 @@ module.exports = {
                 const currentDate = new Date().toDateString();
 
                 if (lastDailyDate === currentDate) {
-                    interaction.editReply(`Ты уже играл. Следующая попытка завтра. Сейчас он равен ${user.balance}`);
+                    interaction.editReply(`Ты уже играл. Следующая попытка завтра. Сейчас он равен ${user.balance} см`);
                     return;
                 }
+
+                user.lastDaily = new Date();
             } else {
                 user = new User({
                     ...query,
                     lastDaily: new Date(),
                 });
             }
+
             user.balance += dailyAmount;
             await user.save();
 
-            interaction.editReply(`Твой писюн увеличился на ${dailyAmount}. Твой размер: ${user.balance}`);
+            interaction.editReply(`Твой писюн увеличился на ${dailyAmount} см. Твой размер: ${user.balance} см`);
         } catch (error) {
-            console.log(`Error with /daily ${error}`);
+            console.log(`Error with /daily: ${error}`);
         }
     },
 };

@@ -26,6 +26,7 @@ client.on("ready", (c) => {
         console.log("Connected to DB.");
 
         eventHandler(client);
+
         client.login(process.env.TOKEN);
     } catch (error) {
         console.log(`Error: ${error}`);

@@ -15,7 +15,7 @@ const userSchema = new Schema({
     },
     lastDaily: {
         type: Date,
-        reqired: true,
+        required: true,
     },
 });
 
