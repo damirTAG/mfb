@@ -13,11 +13,11 @@ Some basic slash commands are:
 ```
 
 ## EN
-Jotaro Kujo - bot named after an Anime character, for local use. Code posted for review. Needs a special environment for run.
+Jotaro Kujo - bot named after an Anime character, for local use. Code posted for review.
 
 ## RU
 Джотаро Куджо - это бот названный в честь персонажа Аниме, для локального использования.
-Код выставлен ради ознокомления. Для запуска нужна специальная среда.
+Код выставлен ради ознокомления.
 
 ## KZ
-Jotaro Kujo — жергілікті қолдануға арналған Аниме кейіпкерінің атымен аталған бот. Анықтама үшін жарияланған код. Оны іске қосу үшін арнайы орта қажет.
+Jotaro Kujo — жергілікті қолдануға арналған Аниме кейіпкерінің атымен аталған бот. Анықтама үшін жарияланған код.
