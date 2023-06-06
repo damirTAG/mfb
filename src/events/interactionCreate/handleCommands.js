@@ -14,7 +14,7 @@ module.exports = async (client, interaction) => {
         if (commandObject.devOnly) {
             if (!devs.includes(interaction.member.id)) {
                 interaction.reply({
-                    content: "Only developers are allowed to run this command.",
+                    content: "Только разработчик может использовать данную команду.",
                     ephemeral: true,
                 });
                 return;
@@ -24,7 +24,7 @@ module.exports = async (client, interaction) => {
         if (commandObject.testOnly) {
             if (!(interaction.guild.id === testServer)) {
                 interaction.reply({
-                    content: "This command cannot be ran here.",
+                    content: "Эта команда доступна только на тест-сервере.",
                     ephemeral: true,
                 });
                 return;
