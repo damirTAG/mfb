@@ -1,7 +1,7 @@
 const { Client, Interaction } = require("discord.js");
 const User = require("../../models/user");
 
-const dailyAmount = Math.floor(Math.random() * 10) + 1;
+const dailyAmount = Math.floor(Math.random() * 9 + 1);
 
 module.exports = {
     name: "dick",
@@ -14,8 +14,8 @@ module.exports = {
     callback: async (client, interaction) => {
         if (!interaction.inGuild()) {
             interaction.reply({
-                content: "You can only run this command inside the server",
-                ephermal: true,
+                content: "You can only run this command inside a server.",
+                ephemeral: true,
             });
             return;
         }
@@ -35,7 +35,7 @@ module.exports = {
                 const currentDate = new Date().toDateString();
 
                 if (lastDailyDate === currentDate) {
-                    interaction.editReply(`Ты уже играл. Следующая попытка завтра. Сейчас он равен ${user.balance} см`);
+                    interaction.editReply(`Ты уже играл. Следующая попытка завтра. Сейчас твой писюн **${user.balance}** см`);
                     return;
                 }
 
@@ -50,7 +50,7 @@ module.exports = {
             user.balance += dailyAmount;
             await user.save();
 
-            interaction.editReply(`Твой писюн увеличился на ${dailyAmount} см. Твой размер: ${user.balance} см`);
+            interaction.editReply(`Твой писюн вырос на **${dailyAmount}** см. Твой размер: **${user.balance}** см`);
         } catch (error) {
             console.log(`Error with /daily: ${error}`);
         }
