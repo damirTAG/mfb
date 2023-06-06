@@ -1,2 +1,16 @@
+1.1.3
+- adding new command "/dickheight"
+
+1.1.2
+- fixing bug with date update in mongodb
+
+1.1.1
+- creating "/dick" command
+- adding database
+
+1.0.1
+- fixing some bugs
+- adding new commands
+
 1.0.0
 - alpha release
