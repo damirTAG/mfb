@@ -5,6 +5,7 @@ Some basic slash commands are:
 ```
 /help
 /dick
+/dickheight
 /develop
 /ping
 /site
