@@ -23,14 +23,14 @@ module.exports = {
         const user = await User.findOne({ userId: targetUserId, guildId: interaction.guild.id });
 
         if (!user) {
-            interaction.editReply(`<@${targetUserId}> еще не прописывал </dick:1113907658731298837>.`);
+            interaction.editReply(`<@${targetUserId}> еще не прописывал(-а) </dick:1113907658731298837>.`);
             return;
         }
 
         interaction.editReply(
             targetUserId === interaction.member.id
                 ? `Размер твоего писюна: **${user.balance} см**`
-                : `<@${targetUserId}> его/eё размер: **${user.balance} см**`
+                : `Размер пользователя <@${targetUserId}>: **${user.balance} см**`
         );
     },
 
@@ -38,7 +38,7 @@ module.exports = {
     description: "узнай размер писюна другого участника!",
     options: [
         {
-            name: "member",
+            name: "user",
             description: "участник, размер писюна которого ты хочешь узнать.",
             type: ApplicationCommandOptionType.User,
         },

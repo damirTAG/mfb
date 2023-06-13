@@ -1,7 +1,13 @@
 const { Client, Interaction } = require("discord.js");
 const User = require("../../models/user");
 
-const dailyAmount = Math.floor(Math.random() * 9 + 1);
+function getRandomNumber(x, y) {
+    const range = y - x + 1;
+    const randomNumber = Math.floor(Math.random() * range);
+    return randomNumber + x;
+}
+
+const dailyAmount = getRandomNumber(1, 10);
 
 module.exports = {
     name: "dick",
@@ -35,7 +41,7 @@ module.exports = {
                 const currentDate = new Date().toDateString();
 
                 if (lastDailyDate === currentDate) {
-                    interaction.editReply(`Ты уже играл. Следующая попытка завтра. Сейчас твой писюн **${user.balance}** см`);
+                    interaction.editReply(`Ты уже играл, следующая попытка завтра. \nСейчас твой писюн **${user.balance}** см.`);
                     return;
                 }
 
@@ -50,7 +56,9 @@ module.exports = {
             user.balance += dailyAmount;
             await user.save();
 
-            interaction.editReply(`Твой писюн вырос на **${dailyAmount}** см. Твой размер: **${user.balance}** см`);
+            interaction.editReply(
+                `Твой писюн вырос на **${dailyAmount}** см. \nТвой размер: **${user.balance}** см\nСледующая попытка завтра.`
+            );
         } catch (error) {
             console.log(`Error with /daily: ${error}`);
         }

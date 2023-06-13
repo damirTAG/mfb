@@ -1,22 +1,24 @@
 const { Schema, model } = require("mongoose");
 
-const userSchema = new Schema({
-    userId: {
-        type: String,
-        required: true,
+const userSchema = new Schema(
+    {
+        userId: {
+            type: String,
+            required: true,
+        },
+        guildId: {
+            type: String,
+            required: true,
+        },
+        balance: {
+            type: Number,
+            default: 0,
+        },
+        lastDaily: {
+            type: Date,
+        },
     },
-    guildId: {
-        type: String,
-        required: true,
-    },
-    balance: {
-        type: Number,
-        default: 0,
-    },
-    lastDaily: {
-        type: Date,
-        required: true,
-    },
-});
+    { timestamps: true }
+);
 
 module.exports = model("User", userSchema);
