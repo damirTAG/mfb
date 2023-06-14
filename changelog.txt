@@ -1,3 +1,6 @@
+1.1.5
+- creating new command ```/spotify``` that displays users current spotify status
+
 1.1.4 (#4)
 - bug fixing, troubles with random numbers (/dick)
 
