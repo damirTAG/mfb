@@ -1,14 +1,6 @@
 const { Client, Interaction } = require("discord.js");
 const User = require("../../models/user");
 
-function getRandomNumber(x, y) {
-    const range = y - x + 1;
-    const randomNumber = Math.floor(Math.random() * range);
-    return randomNumber + x;
-}
-
-const dailyAmount = getRandomNumber(1, 10);
-
 module.exports = {
     name: "dick",
     description: "пиписа",
@@ -52,7 +44,13 @@ module.exports = {
                     lastDaily: new Date(),
                 });
             }
+            function getRandomNumber(x, y) {
+                const range = y - x + 1;
+                const randomNumber = Math.floor(Math.random() * range);
+                return randomNumber + x;
+            }
 
+            const dailyAmount = getRandomNumber(1, 10);
             user.balance += dailyAmount;
             await user.save();
 
