@@ -4,12 +4,10 @@
 
 Some basic slash commands are:
 ```
-/help
-/dick
-/dickheight
-/develop
-/ping
-/site
+/spotify - displays current spotify track
+/dick - grow your dick
+/dickheight - know your friends size
+/develop - development courses
 ```
 
 ## EN
