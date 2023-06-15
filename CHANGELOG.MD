@@ -2,16 +2,16 @@
 - creating new command ```/spotify``` that displays users current spotify status
 
 ### 1.1.4 (#4)
-- bug fixing, troubles with random numbers (/dick)
+- bug fixing, troubles with random numbers ```/dick```
 
 ### 1.1.3 (#3)
-- adding new command "/dickheight"
+- adding new command ```/dickheight```
 
 ### 1.1.2 (#2)
 - fixing bug with date update in mongodb
 
 ### 1.1.1
-- creating "/dick" command
+- creating ```/dick``` command
 - adding database
 
 ### 1.0.1 (#1)
